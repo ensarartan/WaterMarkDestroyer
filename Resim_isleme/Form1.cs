@@ -109,14 +109,17 @@ namespace Resim_isleme
         {
             MouseEventArgs rato = e as MouseEventArgs;
             Bitmap b = ((Bitmap)pictureBox1.Image);
+            Bitmap b2 = ((Bitmap)pictureBox2.Image);
             int x = rato.X * b.Width / pictureBox1.ClientSize.Width;
             int y = rato.Y * b.Height / pictureBox1.ClientSize.Height;
             Color c = b.GetPixel(x, y);
             label2.Text = c.R.ToString();
             label3.Text = c.G.ToString();
             label4.Text = c.B.ToString();
-            
-            
+            pictureBox2.BackColor = GetPixel(e.Location);
+
+
+
         }
 
 
